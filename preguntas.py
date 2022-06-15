@@ -11,7 +11,6 @@ selección de las n variables más relevantes usando una prueba f.
 
 from numpy import linspace
 import pandas as pd
-from sqlalchemy import true
 
 
 def pregunta_01():
@@ -116,7 +115,7 @@ def pregunta_03():
     # Defina un diccionario de parámetros para el GridSearchCV. Se deben
     # considerar valores desde 1 hasta 11 regresores para el modelo
     param_grid = {
-        'values': list(range(1,12)),
+        'values': linspace(1,12),
     }
 
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
