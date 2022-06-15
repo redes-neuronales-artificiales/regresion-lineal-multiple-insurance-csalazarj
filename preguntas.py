@@ -91,7 +91,7 @@ def pregunta_03():
                         OneHotEncoder(),
                         make_column_selector(dtype_include=object),
                     ),
-                    remainder='passthrough',
+                    remainder="passthrough",
                 ),
             ),
             # Paso 2: Construya un selector de características que seleccione las K
@@ -102,19 +102,19 @@ def pregunta_03():
             ),
             # Paso 3: Construya un modelo de regresión lineal.
             (
-                "linealRegression",
+                "linearRegression",
                 LinearRegression(),
             ),
         ],
     )
 
-    # Cargua de las variables.
-    X_train, X_test, y_train, y_test = pregunta_02()
+    # Cargue de las variables.
+    X_train, _, y_train, _ = pregunta_02()
 
     # Defina un diccionario de parámetros para el GridSearchCV. Se deben
     # considerar valores desde 1 hasta 11 regresores para el modelo
     param_grid = {
-        'linearRegression__fit_intercept': list(range(1,12)),
+        "linearRegression__fit_intercept": list(range(1, 12)),
     }
 
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
