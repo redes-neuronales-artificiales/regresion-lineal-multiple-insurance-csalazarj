@@ -9,7 +9,6 @@ selección de las n variables más relevantes usando una prueba f.
 # pylint: disable=invalid-name
 # pylint: disable=unsubscriptable-object
 
-from numpy import linspace
 import pandas as pd
 
 
@@ -115,7 +114,7 @@ def pregunta_03():
     # Defina un diccionario de parámetros para el GridSearchCV. Se deben
     # considerar valores desde 1 hasta 11 regresores para el modelo
     param_grid = {
-        'values': linspace(1,12),
+        'values': list(range(1,12)),
     }
 
     # Defina una instancia de GridSearchCV con el pipeline y el diccionario de
